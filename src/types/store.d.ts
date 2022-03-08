@@ -1,5 +1,8 @@
-export interface userInfo {
-    name:string,
+
+
+export interface State {
+    userInfo:Object,
+    loading:Boolean
     [propName:string]:any
 
 }
