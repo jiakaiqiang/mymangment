@@ -1,28 +1,36 @@
 import {createRouter,createWebHashHistory,RouterOptions} from 'vue-router'
-
+import layout from '@/layout/index.vue'
 export const routes:Array<object>=[{
     path:"/",
-    redirect:"/login",
+    redirect:"/login/first",
     hidden:false,
     meta:{title:'根',icon:""}
 },{
     path:"/login",
     name:"login",
-    component:()=>import('@/views/login/index.vue'),
-    meta:{title:'登录',icon:""}
-},{
-    path:"/homepage",
-    name:"homepage",
-    component:()=>import('@/views/homepage/index.vue'),
-    meta:{title:'首页',icon:""}
-}, {
+    component:layout,
+    meta:{title:'登录',icon:""},
+     children: [
+    {path:"first",name:"first",component:()=>import('@/views/login/index.vue'),meta:{title:"登录第一个",icon:""}},
+    {path:"second",name:"second",component:()=>import("@/views/about/second.vue"),meta:{title:'登录第二个',icon:""}},
+    ]
+
+},
+// ,{
+//     path:"/homepage",
+//     name:"homepage",
+//     component:layout,
+//     meta:{title:'首页',icon:""},
+//     children:[{path: 'homepage',name:"homepage",component:()=>import('@/views/homepage/index.vue'),meta:{title:'首页第二个',icon:""}}]
+// },
+    {
     path: "/about",
     name: "about",
-     component:()=>import("@/views/about/index.vue"),
+     component:layout,
     meta:{title:'关于'},
     children: [
-        // {path:"first",name:"first",component:()=>import("@/views/about/index.vue"),meta:{title:"第一个",icon:""}},
-        {path:"second",name:"second",component:()=>import("@/views/about/second.vue"),meta:{title:'第二个',icon:""}},
+         {path:"firsts",name:"firsts",component:()=>import("@/views/about/index.vue"),meta:{title:"第一个",icon:""}},
+        {path:"second",name:"second",component:()=>import('@/views/homepage/index.vue'),meta:{title:'第二个',icon:""}},
     ]
 }
 ]

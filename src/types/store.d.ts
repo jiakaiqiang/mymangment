@@ -6,3 +6,7 @@ export interface State {
     [propName:string]:any
 
 }
+/*app类型*/
+export interface appState{
+    TagView:Array
+}

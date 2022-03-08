@@ -1,10 +1,11 @@
 import {createStore,Store,useStore as useStoreConfig} from 'vuex'
 import {State} from '../types/store'
 import {InjectionKey}  from 'vue'
+import app from './app'
 //定义注册的key
 export const key:InjectionKey<Store<State>>=Symbol()//通过泛型Store<State> 指定key InjectionKey的泛型
 // export function useStore(){
-    
+
 //     return 'useStoreConfig(key)'
 // }
 export const store=createStore({
@@ -16,7 +17,7 @@ export const store=createStore({
            loading:false
         }
     },
- 
+
     mutations:{
      UPDATE_LOAD(state,loading){
          state.loading=loading
@@ -26,5 +27,8 @@ export const store=createStore({
     },
     actions:{
 
+    },
+    modules:{
+        app
     }
 })
