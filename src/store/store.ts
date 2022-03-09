@@ -1,5 +1,5 @@
 import {createStore,Store,useStore as useStoreConfig} from 'vuex'
-import {State} from '../types/store'
+import {State} from '@/types/store'
 import {InjectionKey}  from 'vue'
 import app from './app'
 //定义注册的key

@@ -2,7 +2,8 @@ export interface Router{
     path:String,
     name:String,
     component:Function,
-    meta:metaType
+    meta:metaType,
+    [propName:string]:any
 }
 interface metaType{
     title:String,

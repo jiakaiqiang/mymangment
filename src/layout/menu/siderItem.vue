@@ -30,7 +30,7 @@ export default defineComponent({
      const  isHasChildren=(item)=>{
        return item.children&&item.children.length>0?false:true
       }
-      console.log(props.items)
+
       return {
           isHasChildren
       }

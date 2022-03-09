@@ -12,7 +12,7 @@ export const routes:Array<object>=[{
     meta:{title:'登录',icon:""},
      children: [
     {path:"first",name:"first",component:()=>import('@/views/login/index.vue'),meta:{title:"登录第一个",icon:""}},
-    {path:"second",name:"second",component:()=>import("@/views/about/second.vue"),meta:{title:'登录第二个',icon:""}},
+        {path:"second",name:"second",component:()=>import("@/views/login/index.vue"),meta:{title:'登录第二个',icon:""}},
     ]
 
 },
@@ -30,7 +30,7 @@ export const routes:Array<object>=[{
     meta:{title:'关于'},
     children: [
          {path:"firsts",name:"firsts",component:()=>import("@/views/about/index.vue"),meta:{title:"第一个",icon:""}},
-        {path:"second",name:"second",component:()=>import('@/views/homepage/index.vue'),meta:{title:'第二个',icon:""}},
+        {path:"seconds",name:"seconds",component:()=>import('@/views/homepage/index.vue'),meta:{title:'第二个',icon:""}},
     ]
 }
 ]

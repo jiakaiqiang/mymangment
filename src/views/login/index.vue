@@ -14,16 +14,20 @@
            <el-button type="primary" @click="submit">登录</el-button>
         <el-button type="primary" @click="submit">注册</el-button>
       </div>
-   </div> 
+   </div>
 </div>
 </template>
 
 <script>
 import {defineComponent,reactive} from 'vue'
 import {useRouter,useRoute} from 'vue-router'
+import {useStore} from 'vuex'
+import {key} from '@/store/store'
+import {routes} from '@/router/index'
 export default defineComponent({
 
     setup(){
+        const store = useStore(key)
         const router= useRouter()
         const route=useRoute()
         const formInfo=reactive({
@@ -31,10 +35,18 @@ export default defineComponent({
           passWord:""},
           rules:{}
         })
-      
+        function handleRoute(route){
+            return route.filter(item=>{
+                return item.hidden&&item.hidden!=false ||item.hidden==undefined
+            })
+        }
+
+        const viewRouteTag=handleRoute(routes)
         const submit=()=>{
-            console.log(router,'wewe')
+
             router.push('/homepage')
+            //添加多个路由标签
+
         }
         return {
             submit,
@@ -51,7 +63,7 @@ export default defineComponent({
      display: flex;
      justify-content: center;
       align-items: center;
-    .login-container{
+      .login-container{
       width: 500px;
       height:200px;
       border:1px dashed pink;

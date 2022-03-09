@@ -5,21 +5,32 @@
     </div>
 </template>
 <script lang="ts">
-import {defineComponent} from 'vue'
+    import {defineComponent,watch} from 'vue'
     import loading from '@/components/loading/index.vue'
   import {key} from './store/store'
   import {useStore} from 'vuex'
+    import {onBeforeRouteUpdate,useRouter,useRoute } from "vue-router";
+
     export default defineComponent({
         components: {
             loading
         },
-        setup(){
-            const store=useStore(key)
-            const state =store.state
-           return{
-               state
-           }
-
+        setup() {
+            const store = useStore(key)
+            const state = store.state
+            const Router=useRouter()
+            const Route=useRoute()
+           //监听当前路由
+           //  watch(()=>Route.name,()=>{
+           //      console.log(Route.name,'wat')
+           //      store.commit('ADD_TAG',Route)
+           //  })
+            watch(()=>Router.currentRoute.value.path,()=>{
+                store.commit('ADD_TAG',Router.currentRoute.value)
+            })
+            return {
+                state
+            }
         }
     })
 </script>

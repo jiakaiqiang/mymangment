@@ -14,7 +14,6 @@
 <script>
 import  {defineComponent} from 'vue'
 import {routes} from '@/router/index'
-console.log(routes)
 import siderItem from '@/layout/menu/siderItem'
 export default defineComponent({
   components:{
@@ -26,7 +25,6 @@ export default defineComponent({
         return item.hidden&&item.hidden!=false ||item.hidden==undefined
       })
     }
-    console.log(handleRoute(routes),'we11we')
     const route=handleRoute(routes)
 
     return{
