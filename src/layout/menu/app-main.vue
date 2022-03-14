@@ -1,8 +1,8 @@
 <template>
-    <div style="display: flex;">
+    <div style="display: flex;height: 100%">
         <menucontent style="width: 400px"></menucontent>
        <div style="flex:1">
-<!--           <breadcrumb></breadcrumb>-->
+           <breadcrumb></breadcrumb>
            <navlink></navlink>
            <router-view ></router-view>
        </div>
@@ -13,10 +13,10 @@
     import menucontent from './index.vue'
     import {defineComponent} from 'vue'
     import navlink from '../nav/index'
-    // import breadcrumb from '../breadcrumb/index'
+    import breadcrumb from '../breadcrumb/index'
 
     export default defineComponent({
-        components:{menucontent,navlink},
+        components:{menucontent,navlink,breadcrumb},
 
     })
 </script>

@@ -1,11 +1,10 @@
 <template>
     <el-menu
     default-active="2"
-    class="el-menu-vertical-demo"
     :router="true"
   >
     <template v-for='item in route' >
-        <siderItem :Key="item.path" :items="item"></siderItem>
+        <siderItem :Key="item.path" :items="item" :basePath="item.path"></siderItem>
     </template>
 
   </el-menu>
@@ -26,6 +25,7 @@ export default defineComponent({
       })
     }
     const route=handleRoute(routes)
+      console.log(route)
 
     return{
       route
