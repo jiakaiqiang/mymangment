@@ -83,11 +83,12 @@
     .mangment-top-class {
         display: flex;
         justify-content: space-between;
-        padding: 8px 16px;
+        padding: 8px 8px;
         height:40px;
         width: 100%;
         align-items: center;
         border:1px solid #8787894d;
+        box-sizing: border-box;
         .mangment-top-down{
             margin-right:32px
         }

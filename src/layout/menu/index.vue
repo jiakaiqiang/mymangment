@@ -4,6 +4,7 @@
       <el-menu
               default-active="2"
               :router="true"
+              class="mangment-menu"
       >
           <template v-for='item in route' >
               <siderItem :Key="item.path" :items="item" :basePath="item.path"></siderItem>
@@ -42,7 +43,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-    .el-menu{
+    .mangment-menu{
        height:calc(100vh - 60px )
     }
     .mangment-logo-class{
