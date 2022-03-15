@@ -12,8 +12,7 @@
         data(){
             return{
                 config:config,
-                logo:{
-                    src:""
+                logo:{src:require('../../assets/logo.png')
                 }
             }
         }

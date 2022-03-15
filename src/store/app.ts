@@ -1,7 +1,7 @@
 import {appState} from "@/types/store";
 import {Router} from "@/types/rotuer"
 const state:appState={
-    TagView:[{path:"/test",meta:{title:"测试"}}]
+    TagView:[]
 }
 const mutations={
     /*添加标签*/

@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script>
+<script >
 import  {defineComponent} from 'vue'
 import logo from '@/layout/logo/index'
 
@@ -47,7 +47,11 @@ export default defineComponent({
        height:calc(100vh - 60px )
     }
     .mangment-logo-class{
-        /*width:100%;*/
+        padding:8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         img{
             width:40px;
             height:40px;
