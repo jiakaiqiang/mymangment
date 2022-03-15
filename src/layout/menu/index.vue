@@ -1,22 +1,28 @@
 <template>
-    <el-menu
-    default-active="2"
-    :router="true"
-  >
-    <template v-for='item in route' >
-        <siderItem :Key="item.path" :items="item" :basePath="item.path"></siderItem>
-    </template>
+  <div style="width: 100%">
+      <logo class="mangment-logo-class"></logo>
+      <el-menu
+              default-active="2"
+              :router="true"
+      >
+          <template v-for='item in route' >
+              <siderItem :Key="item.path" :items="item" :basePath="item.path"></siderItem>
+          </template>
 
-  </el-menu>
+      </el-menu>
+  </div>
 </template>
 
 <script>
 import  {defineComponent} from 'vue'
+import logo from '@/layout/logo/index'
+
 import {routes} from '@/router/index'
 import siderItem from '@/layout/menu/siderItem'
 export default defineComponent({
   components:{
-    siderItem
+    siderItem,
+      logo
   },
   setup(props,context){
     function handleRoute(route){
@@ -35,6 +41,20 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
+    .el-menu{
+       height:calc(100vh - 60px )
+    }
+    .mangment-logo-class{
+        /*width:100%;*/
+        img{
+            width:40px;
+            height:40px;
+        }
+        &>div{
+            /*font-size:1rem;*/
+
+        }
+    }
 
 </style>

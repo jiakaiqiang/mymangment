@@ -1,7 +1,7 @@
 <template>
-    <div style="display: flex;height: 100%">
-        <menucontent style="width: 400px"></menucontent>
-       <div style="flex:1">
+    <div style="display: flex;height: 100%;width: 100%">
+        <menucontent style="width: 300px"></menucontent>
+       <div class="mangent-container">
            <breadcrumb></breadcrumb>
            <navlink></navlink>
            <router-view ></router-view>
@@ -21,6 +21,10 @@
     })
 </script>
 
-<style scoped>
+<style lang="scss">
+    .mangent-container{
+         width: calc(100vw - 232px);
+
+    }
 
 </style>

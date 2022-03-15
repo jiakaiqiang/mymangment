@@ -17,19 +17,19 @@ export const routes: Array<object> = [{
         {
             path: "first",
             name: "first",
-            component: () => import('@/views/login/index.vue'),
+            component: () => import('@/views/login/test.vue'),
             meta: {title: "登录第一个", icon: ""}
         },
         {
             path: "second",
             name: "second",
-            component: () => import("@/views/login/index.vue"),
+            component: () => import("@/views/login/test.vue"),
             meta: {title: '登录第二个', icon: ""}
         },
         {
             path: "thrids",
             name: "thrids",
-            component: () => import("@/views/login/index.vue"),
+            component: () => import("@/views/login/test.vue"),
             meta: {title: '登录第三个', icon: ""}
         },
 

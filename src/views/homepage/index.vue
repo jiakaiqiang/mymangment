@@ -1,5 +1,5 @@
 <template>
-  <menuIndex></menuIndex>
+
 
 </template>
 
@@ -13,7 +13,7 @@ export default defineComponent({
 
   },
   setup(){
-   
+
   }
 })
 </script>

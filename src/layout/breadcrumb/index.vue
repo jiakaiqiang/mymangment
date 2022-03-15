@@ -1,12 +1,12 @@
 <template>
     <div class="mangment-top-class">
         <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <!--            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>-->
             <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path" :to="{ name:item.name }">
                 <span class="no-redirect">{{ item.meta.title }}</span>
             </el-breadcrumb-item>
         </el-breadcrumb>
-        <div>
+        <div class="mangment-top-down">
 
             <el-dropdown @command="handleCommand">
                 <el-icon class="margin-right-8">
@@ -83,7 +83,14 @@
     .mangment-top-class {
         display: flex;
         justify-content: space-between;
-        padding: 8px 16px
+        padding: 8px 16px;
+        height:40px;
+        width: 100%;
+        align-items: center;
+        border:1px solid #8787894d;
+        .mangment-top-down{
+            margin-right:32px
+        }
 
     }
 
