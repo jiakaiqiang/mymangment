@@ -88,6 +88,7 @@
         width: 100%;
         align-items: center;
         border:1px solid #8787894d;
+        background:#ffff;
         box-sizing: border-box;
         .mangment-top-down{
             margin-right:32px

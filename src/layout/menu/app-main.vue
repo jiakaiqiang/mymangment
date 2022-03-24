@@ -24,6 +24,7 @@
 <style lang="scss">
     .mangent-container{
          width: calc(100vw - 232px);
+         
 
     }
 

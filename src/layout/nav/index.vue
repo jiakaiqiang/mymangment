@@ -3,7 +3,7 @@
      <div v-for="(item,index) in tagViews" :key="index">
              <router-link   :to="{path:item.path,query:item.query}"  :class="['nav-class-tag',isActivw(item)?'currentPath':'']">
                  <span class="nav-link-class"> {{item.meta.title}}</span>
-                 <el-icon color="#409EFC" class="nav-tag-close" @click.stpo.prevent="closeRouteLink(item,index)">
+                 <el-icon color="#409EFC" class="nav-tag-close" @click.stop.prevent="closeRouteLink(item,index)">
                      <CloseBold />
                  </el-icon>
              </router-link>
@@ -56,6 +56,7 @@
     .nav-class{
         display: flex;
         align-items: center;
+        background:#FFF;
         .nav-class-tag{
             display: inline-block;
               height:30px;

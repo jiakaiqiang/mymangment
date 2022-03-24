@@ -7,6 +7,7 @@ import { store,key } from '@/store/store'
 import './style/index.scss'
 import './style/elementui.scss'
 
+
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import {CloseBold} from '@element-plus/icons-vue'
 //注册组件

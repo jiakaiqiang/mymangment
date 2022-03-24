@@ -26,7 +26,10 @@
            //      store.commit('ADD_TAG',Route)
            //  })
             watch(()=>Router.currentRoute.value.path,()=>{
-                store.commit('ADD_TAG',Router.currentRoute.value)
+                console.log(Router.currentRoute,'测试')
+               //if(!Router.currentRoute.value.meta.hidden){
+                    store.commit('ADD_TAG',Router.currentRoute.value)
+                //}
             })
             return {
                 state

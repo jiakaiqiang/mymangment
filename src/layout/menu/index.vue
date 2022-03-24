@@ -5,9 +5,10 @@
               default-active="2"
               :router="true"
               class="mangment-menu"
+              unique-opened
       >
-          <template v-for='item in route' >
-              <siderItem :Key="item.path" :items="item" :basePath="item.path"></siderItem>
+          <template v-for='item in route'  :Key="item.path">
+              <siderItem :items="item" :basePath="item.path"></siderItem>
           </template>
 
       </el-menu>
@@ -51,6 +52,8 @@ export default defineComponent({
         display: flex;
         align-items: center;
         justify-content: center;
+        background:#fff;
+        border-bottom: 1px solid #f5f5f5;
 
         img{
             width:40px;

@@ -1,6 +1,7 @@
 <template>
 <div class='login'>
-   <div class='login-container'>
+    <header>产品管理系统</header>
+    <div class='login-container'>
        <el-form :mode="formInfo.data" :rules="formInfo.rules" label-position='right' label-width="120px" class='login-form-class'>
            <el-form-item label='用户名' prop='username'>
                <el-input v-model='formInfo.data.userName'></el-input>
@@ -9,7 +10,6 @@
                <el-input v-model='formInfo.data.passWord'></el-input>
            </el-form-item>
        </el-form>
-
       <div class='login-button'>
            <el-button type="primary" @click="submit">登录</el-button>
         <el-button type="primary" @click="submit">注册</el-button>
@@ -44,7 +44,7 @@ export default defineComponent({
         const viewRouteTag=handleRoute(routes)
         const submit=()=>{
 
-            router.push('/homepage')
+            router.push('/dashboard')
             //添加多个路由标签
 
         }
@@ -58,14 +58,21 @@ export default defineComponent({
 
 <style lang="scss">
  .login{
-     /*width:100%;*/
-     /*height:100%;*/
+     width:100%;
+     height:100%;
      display: flex;
-     justify-content: center;
+     flex-direction: column;;
+      justify-content: center;
       align-items: center;
+       background:#f5f5f5;
+      header{
+        font-size:20px;
+        margin-bottom:63px;
+        
+      }
       .login-container{
       width: 500px;
-      height:200px;
+      height:130px;
       border:1px dashed pink;
       padding:16px;
       .login-button{
