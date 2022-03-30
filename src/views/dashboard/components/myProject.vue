@@ -7,7 +7,25 @@
       </div>
     </template>
     <div  class="my-project">
-        <div v-for="(item,index) in projectList" :key="index"  class="my-project-item">{{item.name}}</div>
+        <div v-for="(item,index) in projectList" :key="index"  class="my-project-item" style="height:150px;padding:16px">
+          <div class='projet-detatis'>
+            <div>
+             <div>icon</div>
+              <div>{{item.name}}</div>
+            </div>
+            <div>
+              不要等待机会，而要创造机会
+            </div>
+            <div>
+              <div>
+               {{item.person}}
+              </div>
+              <div>
+                {{item.time}}
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
   </el-card>
@@ -17,7 +35,7 @@
 import {defineComponent,reactive} from 'vue'
 export default defineComponent({
     setup(){
-        const projectList = reactive([{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},])
+        const projectList = reactive([{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},{logo:"",name:"测试",des:"sdf",person:"sdff",time:"2022-12-12"},])
     return{
         projectList
     }
@@ -43,8 +61,24 @@ export default defineComponent({
         display: flex;
         flex-wrap: wrap;
         .my-project-item{
-            width:33.3%;
-            height: 100px;
+            width:33%;  
+            box-sizing:border-box;
+            .projet-detatis{
+              height: 100%;
+               margin:16px;
+              &>div:nth-child(1),
+              &>div:nth-child(3){
+                display: flex;
+              }
+                &>div:nth-child(2){
+                  margin:8px 0 8px 0
+                }
+                &>div:nth-child(3){
+                justify-content: space-between;
+              }
+
+            }
+              
         }
     }
 }

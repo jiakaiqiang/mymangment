@@ -1,4 +1,4 @@
-@import '../style//color.scss';
+@import '../style/color.scss';
 body{
   height: 100%;
 }
@@ -6,10 +6,6 @@ body{
   margin:0;
   padding:0;
 }
-html {
-    height: 100%;
-    box-sizing: border-box;
-  }
 
   #app {
     height: 100%;
@@ -26,6 +22,12 @@ html {
   .margin-right-16{
     margin-right: 16px;
   }
+  .margin-bottom-32{
+  margin-bottom:32px
+  }
+  .margin-bottom-16{
+    margin-bottom:16px
+    }
   #app{
     background:$background
   }

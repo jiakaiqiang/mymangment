@@ -19,12 +19,13 @@
       <!--项目-->
       <!--最新动态-->
       <div class='my-work-main-left'>
-        <my-project></my-project>
+        <my-project class='margin-bottom-16'></my-project>
         <new-news></new-news>
       </div>
       <!--快捷导航-->
       <div class='my-work-main-right'> 
-        <quick-nav></quick-nav>
+        <quick-nav  class='margin-bottom-16'></quick-nav>
+         <img :src="require('@/assets/work.svg')" style="background:#fff"/>
       </div>
     </main>
   </div>
@@ -34,10 +35,12 @@
 import myProject from '@/views/dashboard/components/myProject.vue'
 import newNews from '@/views/dashboard/components/newNews.vue'
 import quickNav from '@/views/dashboard/components/quickNav.vue'
+import workStatus from '@/views/dashboard/components/workStatus.vue'
+
 import { defineComponent, reactive } from "vue";
 export default defineComponent({
   components:{
-    myProject,newNews,quickNav
+    myProject,newNews,quickNav,workStatus
   },
   setup() {
     const personData = reactive([
@@ -46,10 +49,12 @@ export default defineComponent({
       { title: "团队", num: 300 },
 
     ]);
+    
     const circleUrl=''
     return {
       personData,
-      circleUrl
+      circleUrl,
+     
     };
   },
 });
@@ -102,11 +107,11 @@ export default defineComponent({
      display: flex;
     .my-work-main-left{
      
-      width:60%;
+      width:70%;
        
      }
      .my-work-main-right{
-       width:35%;
+       width:30%;
         margin-left:16px
      }
   }

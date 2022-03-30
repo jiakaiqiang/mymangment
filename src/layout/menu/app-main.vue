@@ -1,31 +1,49 @@
 <template>
-    <div style="display: flex;height: 100%;width: 100%">
-        <menucontent style="width: 300px"></menucontent>
-       <div class="mangent-container">
-           <breadcrumb></breadcrumb>
-           <navlink></navlink>
-           <router-view ></router-view>
-       </div>
+  <div style="display: flex; height: 100%; width: 100%">
+    <menucontent style="width: 220px"></menucontent>
+    <div class="mangent-container">
+      <breadcrumb></breadcrumb>
+      <navlink></navlink>
+      <el-scrollbar>
+        <router-view></router-view>
+      </el-scrollbar>
     </div>
+  </div>
 </template>
 
 <script>
-    import menucontent from './index.vue'
-    import {defineComponent} from 'vue'
-    import navlink from '../nav/index'
-    import breadcrumb from '../breadcrumb/index'
+import menucontent from "./index.vue";
+import { defineComponent, ref } from "vue";
+import navlink from "../nav/index.vue";
+import breadcrumb from "../breadcrumb/index.vue";
 
-    export default defineComponent({
-        components:{menucontent,navlink,breadcrumb},
-
-    })
+export default defineComponent({
+  components: { menucontent, navlink, breadcrumb },
+  setup() {
+    const appHeihgt = document.getElementById("app")?.clientHeight - 100 + "px";
+    return {
+      appHeihgt,
+    };
+  },
+});
 </script>
 
 <style lang="scss">
-    .mangent-container{
-         width: calc(100vw - 232px);
-         
-
-    }
-
+.mangent-container {
+  width: calc(100vw - 152px);
+  .scrollbar-demo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 4px;
+    background: var(--el-color-primary-light-9);
+    color: var(--el-color-primary);
+  }
+  .el-scrollbar{
+      height: calc(100vh - 86px);
+  }
+}
 </style>
