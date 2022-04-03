@@ -2,32 +2,30 @@
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <span>{{item.name}}</span>
-       <el-tag class="ml-2" :type="item.type">{{item.tag}}</el-tag>
+        <span>{{ item.title }}</span>
+        <el-tag class="ml-2" :type="item.type">{{ item.time }}</el-tag>
       </div>
     </template>
-    <div>
+    <div class="card-content">
       <div>
-      <div>{{item.number}}</div>
-      <div>{{item.icon}}</div>
+        <div>{{ item.num }}</div>
+        <div>{{ item.icon }}</div>
+      </div>
+      <div>
+        <div>{{ item.subTitle }}</div>
+        <div>{{ item.subNum }}</div>
+      </div>
     </div>
-    <div>
-      <div>{{item.title}}</div>
-      <div>{{item.money}}</div>
-    </div>
-    </div>
-
-  
   </el-card>
 </template>
 
 <script lang='ts'>
 import { defineComponent, ref, reactive } from "vue";
 export default defineComponent({
-  props:{
-    item:{
-      type:Object,
-      default:""
+  props: {
+    item: {
+      type: Object,
+      default: "",
     },
   },
 
@@ -36,4 +34,21 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-content{
+  &>div{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+  &>div:nth-child(1){
+    height:30px;
+    line-height:30px;
+  }
+
+}
 </style>

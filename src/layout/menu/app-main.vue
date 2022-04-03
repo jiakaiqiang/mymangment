@@ -1,11 +1,21 @@
 <template>
   <div style="display: flex; height: 100%; width: 100%">
-    <menucontent style="width: 220px"></menucontent>
+
+      <menucontent style="width: 220px"></menucontent>
+   
+  
     <div class="mangent-container">
       <breadcrumb></breadcrumb>
       <navlink></navlink>
       <el-scrollbar>
-        <router-view></router-view>
+         <router-view  v-slot="{Component}">
+            <transition name="fade">
+           <keep-alive>
+                    <component :is="Component"/>
+                </keep-alive>
+        </transition>
+         </router-view>
+       
       </el-scrollbar>
     </div>
   </div>
@@ -30,7 +40,7 @@ export default defineComponent({
 
 <style lang="scss">
 .mangent-container {
-  width: calc(100vw - 152px);
+  flex:1;
   .scrollbar-demo-item {
     display: flex;
     align-items: center;
@@ -42,8 +52,8 @@ export default defineComponent({
     background: var(--el-color-primary-light-9);
     color: var(--el-color-primary);
   }
-  .el-scrollbar{
-      height: calc(100vh - 86px);
+  .el-scrollbar {
+    height: calc(100vh - 86px);
   }
 }
 </style>

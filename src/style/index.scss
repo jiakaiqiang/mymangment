@@ -9,6 +9,7 @@ body{
 
   #app {
     height: 100%;
+    font-size:16px;
   }
   .margin-left-8{
     margin-left:8px;
@@ -31,3 +32,23 @@ body{
   #app{
     background:$background
   }
+.el-menu {
+  background:#001529;
+  .el-sub-menu__title{
+    color:rgb(240, 234, 234) 
+  }
+  .el-menu-item{
+    color:white
+  }
+  .el-menu-item:hover{
+    background:#2f3f85
+  }
+  .el-menu-item.is-active{
+ background:#1d64cd;
+ 
+  }
+  .el-sub-menu__title:hover{
+    background:#6956bd
+    
+  }
+}

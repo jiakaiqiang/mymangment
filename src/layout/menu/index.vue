@@ -1,6 +1,7 @@
 <template>
   <div style="width: 100%">
-      <logo class="mangment-logo-class"></logo>
+      <logo class="mangment-logo-class "></logo>
+      
       <el-menu
               default-active="2"
               :router="true"
@@ -52,7 +53,8 @@ export default defineComponent({
         display: flex;
         align-items: center;
         justify-content: center;
-        background:#fff;
+        background:#001529;
+        color:#fafafa;
         border-bottom: 1px solid #f5f5f5;
 
         img{

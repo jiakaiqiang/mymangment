@@ -111,7 +111,8 @@ export default defineComponent({
        
      }
      .my-work-main-right{
-       width:30%;
+       flex-wrap: wrap;
+       flex:1;
         margin-left:16px
      }
   }

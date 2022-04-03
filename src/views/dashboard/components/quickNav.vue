@@ -51,7 +51,8 @@ export default defineComponent({
         display: flex;
         flex-wrap: wrap;
         .my-project-item{
-            width:33.0%;
+            width:33%;
+            flex-wrap: wrap;
             height: 100px;
             display: flex;
              justify-content:center;
